@@ -8,13 +8,23 @@ $jsonObj = json_decode($jsonStr);
  
 if($jsonObj->request_type == 'addEditUser'){ 
     $user_data = $jsonObj->user_data; 
-    $first_name = !empty($user_data[0])?$user_data[0]:''; 
-    $last_name = !empty($user_data[1])?$user_data[1]:''; 
-    $email = !empty($user_data[2])?$user_data[2]:''; 
-    $gender = !empty($user_data[3])?$user_data[3]:''; 
-    $country = !empty($user_data[4])?$user_data[4]:''; 
-    $status = !empty($user_data[5])?$user_data[5]:0; 
-    $id = !empty($user_data[6])?$user_data[6]:0; 
+    $fsr_id= !empty($user_data[0])?$user_data[0]:'';
+    $fsr_date= !empty($user_data[1])?$user_data[1]:'';
+    $fsr_slot= !empty($user_data[2])?$user_data[2]:'';
+    $fsr_sch_fm= !empty($user_data[3])?$user_data[3]:'';
+    $fsr_sch_till= !empty($user_data[4])?$user_data[4]:" ";
+    $faculty= !empty($user_data[5])?$user_data[5]:" ";
+    $lec_type= !empty($user_data[6])?$user_data[6]:" ";
+    $act_code= !empty($user_data[7])?$user_data[7]:" ";
+    $batch= !empty($user_data[8])?$user_data[8]:" ";
+    $room= !empty($user_data[9])?$user_data[9]:" ";
+    $chap_code= !empty($user_data[10])?$user_data[10]:" ";
+    $fac_time_in= !empty($user_data[11])?$user_data[11]:" ";
+    $fac_time_out= !empty($user_data[12])?$user_data[12]:" ";
+    $attn_by= !empty($user_data[13])?$user_data[13]:" ";
+    $attn_by_in= !empty($user_data[14])?$user_data[14]:" ";
+    $attn_by_out= !empty($user_data[15])?$user_data[15]:" ";
+    $remarks= !empty($user_data[16])?$user_data[16]:" ";
  
     $err = ''; 
     if(empty($first_name)){ 
