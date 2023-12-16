@@ -133,15 +133,23 @@ function addData(){
     $('.frm-status').html('');
     $('#userModalLabel').html('Add New User');
 
-    $('#userGender_1').prop('checked', true);
-    $('#userGender_2').prop('checked', false);
-    $('#userStatus_1').prop('checked', true);
-    $('#userStatus_2').prop('checked', false);
-    $('#userFirstName').val('');
-    $('#userLastName').val('');
-    $('#userEmail').val('');
-    $('#userCountry').val('');
-    $('#userID').val(0);
+   $('#fsr_id').val('');
+	$('#fsr_date').val('');
+	$('#fsr_slot').val('');
+	$('#fsr_sch_fm').val('');
+	$('#fsr_sch_till').val('');
+	$('#faculty').val('');
+	$('#lec_type').val('');
+	$('#act_code').val('');
+	$('#batch').val('');
+	$('#room').val('');
+	$('#chap_code').val('');
+	$('#fac_time_in').val('');
+	$('#fac_time_out').val('');
+	$('#attn_by').val('');
+	$('#attn_by_in').val('');
+	$('#attn_by_out').val('');
+	$('#remarks').val('');
     $('#userDataModal').modal('show');
 }
 
@@ -149,40 +157,46 @@ function editData(user_data){
     $('.frm-status').html('');
     $('#userModalLabel').html('Edit User #'+user_data.id);
 
-    if(user_data.gender == 'Female'){
-        $('#userGender_1').prop('checked', false);
-        $('#userGender_2').prop('checked', true);
-    }else{
-        $('#userGender_2').prop('checked', false);
-        $('#userGender_1').prop('checked', true);
-    }
-
-    if(user_data.status == 1){ 
-        $('#userStatus_2').prop('checked', false);
-        $('#userStatus_1').prop('checked', true);
-    }else{
-        $('#userStatus_1').prop('checked', false);
-        $('#userStatus_2').prop('checked', true);
-    }
-
-    $('#userFirstName').val(user_data.first_name);
-    $('#userLastName').val(user_data.last_name);
-    $('#userEmail').val(user_data.email);
-    $('#userCountry').val(user_data.country);
-    $('#userID').val(user_data.id);
+   	$('#fsr_id').val(user_data.fsr_id);
+	$('#fsr_date').val(user_data.fsr_date);
+	$('#fsr_slot').val(user_data.fsr_slot);
+	$('#fsr_sch_fm').val(user_data.fsr_sch_fm);
+	$('#fsr_sch_till').val(user_data.fsr_sch_till);
+	$('#faculty').val(user_data.faculty);
+	$('#lec_type').val(user_data.lec_type);
+	$('#act_code').val(user_data.act_code);
+	$('#batch').val(user_data.batch);
+	$('#room').val(user_data.room);
+	$('#chap_code').val(user_data.chap_code);
+	$('#fac_time_in').val(user_data.fac_time_in);
+	$('#fac_time_out').val(user_data.fac_time_out);
+	$('#attn_by').val(user_data.attn_by);
+	$('#attn_by_in').val(user_data.attn_by_in);
+	$('#attn_by_out').val(user_data.attn_by_out);
+	$('#remarks').val(user_data.remarks);
     $('#userDataModal').modal('show');
 }
 
 function submitUserData(){
     $('.frm-status').html('');
     let input_data_arr = [
-        document.getElementById('userFirstName').value,
-        document.getElementById('userLastName').value,
-        document.getElementById('userEmail').value,
-        document.querySelector('input[name="userGender"]:checked').value,
-        document.getElementById('userCountry').value,
-        document.querySelector('input[name="userStatus"]:checked').value,
-        document.getElementById('userID').value,
+        document.getElementById('fsr_id').value,
+	document.getElementById('fsr_date').value,
+	document.getElementById('fsr_slot').value,
+	document.getElementById('fsr_sch_fm').value,
+	document.getElementById('fsr_sch_till').value,
+	document.getElementById('faculty').value,
+	document.getElementById('lec_type').value,
+	document.getElementById('act_code').value,
+	document.getElementById('batch').value,
+	document.getElementById('room').value,
+	document.getElementById('chap_code').value,
+	document.getElementById('fac_time_in').value,
+	document.getElementById('fac_time_out').value,
+	document.getElementById('attn_by').value,
+	document.getElementById('attn_by_in').value,
+	document.getElementById('attn_by_out').value,
+	document.getElementById('remarks').value,
     ];
 
     fetch("eventHandler.php", {
