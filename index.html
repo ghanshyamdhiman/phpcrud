@@ -235,7 +235,7 @@ function deleteData(fsr_id){
           fetch("eventHandler.php", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ request_type:'deleteUser', fsr_id: fsr_id}),
+            body: JSON.stringify({ request_type:'deleteUser', fsr_id: 'fsr_id'}),
           })
           .then(response => response.json())
           .then(data => {
