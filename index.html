@@ -166,7 +166,7 @@ function addData(){
 
 function editData(user_data){
     $('.frm-status').html('');
-    $('#userModalLabel').html('Edit User #'+user_data.id);
+    $('#userModalLabel').html('Edit User #'+user_data.fsr_id);
 
    	$('#fsr_id').val(user_data.fsr_id);
 	$('#fsr_date').val(user_data.fsr_date);
@@ -236,7 +236,7 @@ function submitUserData(){
 }
 
 
-function deleteData(user_id){
+function deleteData(fsr_id){
     Swal.fire({
         title: 'Are you sure to Delete?',
         text:'You won\'t be able to revert this!',
@@ -251,7 +251,7 @@ function deleteData(user_id){
           fetch("eventHandler.php", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ request_type:'deleteUser', user_id: user_id}),
+            body: JSON.stringify({ request_type:'deleteUser', fsr_id: fsr_id}),
           })
           .then(response => response.json())
           .then(data => {
