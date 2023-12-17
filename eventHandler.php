@@ -5,6 +5,8 @@ require_once 'dbConnect.php';
 // Retrieve JSON from POST body 
 $jsonStr = file_get_contents('php://input'); 
 $jsonObj = json_decode($jsonStr); 
+echo $jsonObj;
+exit();
  
 if($jsonObj->request_type == 'addEditUser'){ 
     $user_data = $jsonObj->user_data; 
