@@ -68,9 +68,16 @@ if($jsonObj->request_type == 'addEditUser'){
             } 
         }else{ 
             // Insert event data into the database 
-            $sqlQ = "INSERT INTO members (first_name,last_name,email,gender,country,status) VALUES (?,?,?,?,?,?)"; 
+            $sqlQ = "INSERT INTO tblfsr(fsr_id, fsr_date, fsr_slot, fsr_sch_fm, fsr_sch_till, faculty, 
+            lec_type, act_code, batch, room, chap_code, fac_time_in, fac_time_out,
+            attn_by, attn_by_in, attn_by_out, remarks) 
+            value('$fsr_id','$fsr_date','$fsr_slot','$fsr_sch_fm','$fsr_sch_till','$faculty',
+            '$lec_ type','$act_code','$batch','$room','$chap_code','$fac_time_in','$fac_time_out',
+            '$attn_by','$attn_by_in','$attn_by_out','$remarks')"); 
             $stmt = $conn->prepare($sqlQ); 
-            $stmt->bind_param("sssssi", $first_name, $last_name, $email, $gender, $country, $status); 
+            $stmt->bind_param("ssssssssssssssssss", $fsr_id, $fsr_date, $fsr_slot, $fsr_sch_fm, $fsr_sch_till, $faculty, 
+            $lec_type, $act_code, $batch, $room, $chap_code, $fac_time_in, $fac_time_out, 
+            $attn_by, $attn_by_in, $attn_by_out, $remarks); 
             $insert = $stmt->execute(); 
  
             if($insert){ 
@@ -87,9 +94,9 @@ if($jsonObj->request_type == 'addEditUser'){
         echo json_encode(['error' => trim($err, '<br/>')]); 
     } 
 }elseif($jsonObj->request_type == 'deleteUser'){ 
-    $id = $jsonObj->user_id; 
+    $fsr_id = $jsonObj->fsr_id; 
  
-    $sql = "DELETE FROM members WHERE id=$id"; 
+    $sql = "DELETE FROM tblfsr WHERE id=$fsr_id"; 
     $delete = $conn->query($sql); 
     if($delete){ 
         $output = [ 
