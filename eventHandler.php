@@ -96,7 +96,7 @@ if($jsonObj->request_type == 'addEditUser'){
 }elseif($jsonObj->request_type == 'deleteUser'){ 
     $fsr_id = $jsonObj->fsr_id; 
  
-    $sql = "DELETE FROM tblfsr WHERE id=$fsr_id"; 
+    $sql = "DELETE FROM tblfsr WHERE fsr_id=$fsr_id"; 
     $delete = $conn->query($sql); 
     if($delete){ 
         $output = [ 
