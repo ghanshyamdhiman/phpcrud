@@ -4,33 +4,20 @@
 <html>
     <head>
 <title> Test</title>
+	    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.css" rel="stylesheet">
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script src="js/jquery.min.js"></script>
-
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<script src="js/bootstrap.min.js"></script>
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-<script src="js/sweetalert2.all.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-<link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
-<script type="text/javascript" src="DataTables/datatables.min.js"></script>
-
-
-<link href="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.css" rel="stylesheet">
- 
 <script src="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.js"></script>
 
 </head>
 <body>
-    <h1>Data Tables Testing</h1>
+    <h1>IIT-HOME : FSR </h1>
 <div class="top-panel">
-    <a href="javascript:void(0);" class="btn btn-primary" onclick="addData()">Add New User</a>
+    <a href="javascript:void(0);" class="btn btn-primary" onclick="addData()">Add New Record</a>
 </div>
 
 <!-- Data list table -->
@@ -85,32 +72,32 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="userModalLabel">Add New User</h1>
+                <h1 class="modal-title fs-5" id="userModalLabel">Add New Record</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form name="userDataFrm" id="userDataFrm">
             <div class="modal-body">
                 <div class="frm-status"></div>
-               <div class="mb-3"><label for="fsr_id" class="form-label">fsr_id</label><input type="text" class="form-control" id="fsr_id" placeholder="fsr_id"></div>
-<div class="mb-3"><label for="fsr_date" class="form-label">fsr_date</label><input type="date" class="form-control" id="fsr_date" placeholder="fsr_date"></div>
-<div class="mb-3"><label for="fsr_slot" class="form-label">fsr_slot</label><input type="text" class="form-control" id="fsr_slot" placeholder="fsr_slot"></div>
-<div class="mb-3"><label for="fsr_sch_fm" class="form-label">fsr_sch_fm</label><input type="time" class="form-control" id="fsr_sch_fm" placeholder="fsr_sch_fm"></div>
-<div class="mb-3"><label for="fsr_sch_till" class="form-label">fsr_sch_till</label><input type="time" class="form-control" id="fsr_sch_till" placeholder="fsr_sch_till"></div>
-<div class="mb-3"><label for="faculty" class="form-label">faculty</label><input type="text" class="form-control" id="faculty" placeholder="faculty"></div>
-<div class="mb-3"><label for="lec_type" class="form-label">lec_type</label><input type="text" class="form-control" id="lec_type" placeholder="lec_type"></div>
-<div class="mb-3"><label for="act_code" class="form-label">act_code</label><input type="text" class="form-control" id="act_code" placeholder="act_code"></div>
-<div class="mb-3"><label for="batch" class="form-label">batch</label><input type="text" class="form-control" id="batch" placeholder="batch"></div>
-<div class="mb-3"><label for="room" class="form-label">room</label><input type="text" class="form-control" id="room" placeholder="room"></div>
-<div class="mb-3"><label for="chap_code" class="form-label">chap_code</label><input type="text" class="form-control" id="chap_code" placeholder="chap_code"></div>
-<div class="mb-3"><label for="fac_time_in" class="form-label">fac_time_in</label><input type="time" class="form-control" id="fac_time_in" placeholder="fac_time_in"></div>
-<div class="mb-3"><label for="fac_time_out" class="form-label">fac_time_out</label><input type="time" class="form-control" id="fac_time_out" placeholder="fac_time_out"></div>
-<div class="mb-3"><label for="attn_by" class="form-label">attn_by</label><input type="text" class="form-control" id="attn_by" placeholder="attn_by"></div>
-<div class="mb-3"><label for="attn_by_in" class="form-label">attn_by_in</label><input type="time" class="form-control" id="attn_by_in" placeholder="attn_by_in"></div>
-<div class="mb-3"><label for="attn_by_out" class="form-label">attn_by_out</label><input type="time" class="form-control" id="attn_by_out" placeholder="attn_by_out"></div>
-<div class="mb-3"><label for="remarks" class="form-label">remarks</label><input type="text" class="form-control" id="remarks" placeholder="remarks"></div>
-            </div>
-            <div class="modal-footer">
-                <input type="hidden" id="userID" value="0">
+                <div class="mb-3"><label for="fsr_id" class="form-label">fsr_id</label><input type="text" class="form-control" id="fsr_id" placeholder="fsr_id"></div>
+		<div class="mb-3"><label for="fsr_date" class="form-label">fsr_date</label><input type="date" class="form-control" id="fsr_date" placeholder="fsr_date"></div>
+		<div class="mb-3"><label for="fsr_slot" class="form-label">fsr_slot</label><input type="text" class="form-control" id="fsr_slot" placeholder="fsr_slot"></div>
+		<div class="mb-3"><label for="fsr_sch_fm" class="form-label">fsr_sch_fm</label><input type="time" class="form-control" id="fsr_sch_fm" placeholder="fsr_sch_fm"></div>
+		<div class="mb-3"><label for="fsr_sch_till" class="form-label">fsr_sch_till</label><input type="time" class="form-control" id="fsr_sch_till" placeholder="fsr_sch_till"></div>
+		<div class="mb-3"><label for="faculty" class="form-label">faculty</label><input type="text" class="form-control" id="faculty" placeholder="faculty"></div>
+		<div class="mb-3"><label for="lec_type" class="form-label">lec_type</label><input type="text" class="form-control" id="lec_type" placeholder="lec_type"></div>
+		<div class="mb-3"><label for="act_code" class="form-label">act_code</label><input type="text" class="form-control" id="act_code" placeholder="act_code"></div>
+		<div class="mb-3"><label for="batch" class="form-label">batch</label><input type="text" class="form-control" id="batch" placeholder="batch"></div>
+		<div class="mb-3"><label for="room" class="form-label">room</label><input type="text" class="form-control" id="room" placeholder="room"></div>
+		<div class="mb-3"><label for="chap_code" class="form-label">chap_code</label><input type="text" class="form-control" id="chap_code" placeholder="chap_code"></div>
+		<div class="mb-3"><label for="fac_time_in" class="form-label">fac_time_in</label><input type="time" class="form-control" id="fac_time_in" placeholder="fac_time_in"></div>
+		<div class="mb-3"><label for="fac_time_out" class="form-label">fac_time_out</label><input type="time" class="form-control" id="fac_time_out" placeholder="fac_time_out"></div>
+		<div class="mb-3"><label for="attn_by" class="form-label">attn_by</label><input type="text" class="form-control" id="attn_by" placeholder="attn_by"></div>
+		<div class="mb-3"><label for="attn_by_in" class="form-label">attn_by_in</label><input type="time" class="form-control" id="attn_by_in" placeholder="attn_by_in"></div>
+		<div class="mb-3"><label for="attn_by_out" class="form-label">attn_by_out</label><input type="time" class="form-control" id="attn_by_out" placeholder="attn_by_out"></div>
+		<div class="mb-3"><label for="remarks" class="form-label">remarks</label><input type="text" class="form-control" id="remarks" placeholder="remarks"></div>
+	</div>
+		<div class="modal-footer">
+                <input type="hidden" id="fsr_id" value="0">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary" onclick="submitUserData()">Submit</button>
             </div>
@@ -119,18 +106,14 @@
     </div>
 </div>
 
-
-
 <script>
-
-
 
 var table = $('#dataList').DataTable({
     "processing": true,
     "serverSide": true,
     "ajax": "fetchData.php",
     "columnDefs": [
-        { "orderable": false, "targets": 7 }
+        { "orderable": false, "targets": 17 }
     ]
 });
 
@@ -144,7 +127,7 @@ function addData(){
     $('.frm-status').html('');
     $('#userModalLabel').html('Add New User');
 
-   $('#fsr_id').val('');
+   	$('#fsr_id').val('');
 	$('#fsr_date').val('');
 	$('#fsr_slot').val('');
 	$('#fsr_sch_fm').val('');
@@ -161,7 +144,8 @@ function addData(){
 	$('#attn_by_in').val('');
 	$('#attn_by_out').val('');
 	$('#remarks').val('');
-    $('#userDataModal').modal('show');
+    
+	$('#userDataModal').modal('show');
 }
 
 function editData(user_data){
