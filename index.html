@@ -191,7 +191,7 @@ function submitUserData(){
 	document.getElementById('attn_by').value,
 	document.getElementById('attn_by_in').value,
 	document.getElementById('attn_by_out').value,
-	document.getElementById('remarks').value,
+	document.getElementById('remarks').value
     ];
 
     fetch("eventHandler.php", {
@@ -222,7 +222,7 @@ function submitUserData(){
 
 function deleteData(fsr_id){
     Swal.fire({
-        title: 'Are you sure to Delete?',
+        title: "Are you sure to Delete?" + fsr_id,
         text:'You won\'t be able to revert this!',
         icon: 'warning',
         showCancelButton: true,
