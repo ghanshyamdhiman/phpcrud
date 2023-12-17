@@ -27,22 +27,34 @@ if($jsonObj->request_type == 'addEditUser'){
     $remarks= !empty($user_data[16])?$user_data[16]:" ";
  
     $err = ''; 
-    if(empty($first_name)){ 
-        $err .= 'Please enter your First Name.<br/>'; 
-    } 
-    if(empty($last_name)){ 
-        $err .= 'Please enter your Last Name.<br/>'; 
-    } 
-    if(empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)){ 
-        $err .= 'Please enter a valid Email Address.<br/>'; 
-    } 
+    if(empty($fsr_id)){$err .= 'Please enter fsr_id<br/>';}
+    if(empty($fsr_date)){$err .= 'Please enter fsr_date<br/>';}
+    if(empty($fsr_slot)){$err .= 'Please enter fsr_slot<br/>';}
+    if(empty($fsr_sch_fm)){$err .= 'Please enter fsr_sch_fm<br/>';}
+    if(empty($fsr_sch_till)){$err .= 'Please enter fsr_sch_till<br/>';}
+    if(empty($faculty)){$err .= 'Please enter faculty<br/>';}
+    if(empty($lec_type)){$err .= 'Please enter lec_type<br/>';}
+    if(empty($act_code)){$err .= 'Please enter act_code<br/>';}
+    if(empty($batch)){$err .= 'Please enter batch<br/>';}
+    if(empty($room)){$err .= 'Please enter room<br/>';}
+    if(empty($chap_code)){$err .= 'Please enter chap_code<br/>';}
+    if(empty($fac_time_in)){$err .= 'Please enter fac_time_in<br/>';}
+    if(empty($fac_time_out)){$err .= 'Please enter fac_time_out<br/>';}
+    if(empty($attn_by)){$err .= 'Please enter attn_by<br/>';}
+    if(empty($attn_by_in)){$err .= 'Please enter attn_by_in<br/>';}
+    if(empty($attn_by_out)){$err .= 'Please enter attn_by_out<br/>';}
+    if(empty($remarks)){$err .= 'Please enter remarks<br/>';}
      
     if(!empty($user_data) && empty($err)){ 
-        if(!empty($id)){ 
+        if(!empty($fsr_id)){ 
             // Update user data into the database 
-            $sqlQ = "UPDATE members SET first_name=?,last_name=?,email=?,gender=?,country=?,status=?,modified=NOW() WHERE id=?"; 
+            $sqlQ = "UPDATE tblfsr SET fsr_id=?, fsr_date=?, fsr_slot=?, fsr_sch_fm=?, fsr_sch_till=?, faculty=?, 
+            lec_type=?, act_code=?, batch=?, room=?, chap_code=?, fac_time_in=?, fac_time_out=?, 
+            attn_by=?, attn_by_in=?, attn_by_out=?, remarks=? WHERE fsr_id=?"; 
             $stmt = $conn->prepare($sqlQ); 
-            $stmt->bind_param("sssssii", $first_name, $last_name, $email, $gender, $country, $status, $id); 
+            $stmt->bind_param("ssssssssssssssssss", $fsr_id, $fsr_date, $fsr_slot, $fsr_sch_fm, $fsr_sch_till, $faculty, 
+            $lec_type, $act_code, $batch, $room, $chap_code, $fac_time_in, $fac_time_out, 
+            $attn_by, $attn_by_in, $attn_by_out, $remarks); 
             $update = $stmt->execute(); 
  
             if($update){ 
