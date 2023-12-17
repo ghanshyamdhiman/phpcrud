@@ -5,8 +5,6 @@ require_once 'dbConnect.php';
 // Retrieve JSON from POST body 
 $jsonStr = file_get_contents('php://input'); 
 $jsonObj = json_decode($jsonStr); 
-echo $jsonObj;
-exit();
  
 if($jsonObj->request_type == 'addEditUser'){ 
     $user_data = $jsonObj->user_data; 
@@ -98,7 +96,8 @@ if($jsonObj->request_type == 'addEditUser'){
 }elseif($jsonObj->request_type == 'deleteUser'){ 
     $fsr_id = $jsonObj->fsr_id; 
  
-    $sql = "DELETE FROM tblfsr WHERE fsr_id=$fsr_id"; 
+    $sql = "DELETE FROM tblfsr WHERE fsr_id='$fsr_id'"; 
+    echo "Delete SQL ".$sql;
     $delete = $conn->query($sql); 
     if($delete){ 
         $output = [ 
